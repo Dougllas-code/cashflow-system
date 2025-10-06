@@ -11,20 +11,50 @@ Um sistema completo de gestão financeira desenvolvido com arquitetura de micros
 
 ## 🏗️ Arquitetura do Sistema
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │    Backend      │    │    Reports      │
-│   (Angular)     │◄──►│    (.NET 8)     │◄──►│   Worker        │
-│                 │    │                 │    │   (.NET 8)      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │                       │                       │
-         └───────────────────────┼───────────────────────┘
-                                 │
-                        ┌─────────────────┐
-                        │   MySQL 8.0     │
-                        │   RabbitMQ      │
-                        └─────────────────┘
+```mermaid
+graph TB
+    subgraph "Frontend"
+        FE[Angular App<br/>cashflow-front]
+    end
+    
+    subgraph "Backend Services"
+        API[.NET 8 API<br/>cashflow-back]
+        WORKER[Worker Service<br/>cashflow-reports]
+    end
+    
+    subgraph "Data Layer"
+        DB[(MySQL<br/>Database)]
+        MQ[RabbitMQ<br/>Message Queue]
+    end
+    
+    subgraph "Infrastructure"
+        DOCKER[Docker<br/>Containers]
+    end
+    
+    %% Connections
+    FE <-->|HTTP/HTTPS<br/>REST API| API
+    API -->|SQL Queries<br/>Transactions| DB
+    API -->|Publish Messages<br/>Report Requests| MQ
+    WORKER -->|Consume Messages<br/>Process Reports| MQ
+    WORKER -->|Read Data<br/>Generate Reports| DB
+    
+    %% Docker containerization
+    FE -.->|Containerized| DOCKER
+    API -.->|Containerized| DOCKER
+    WORKER -.->|Containerized| DOCKER
+    DB -.->|Containerized| DOCKER
+    MQ -.->|Containerized| DOCKER
+    
+    %% Styling
+    classDef frontend fill:#e1f5fe
+    classDef backend fill:#f3e5f5
+    classDef data fill:#e8f5e8
+    classDef infra fill:#fff3e0
+    
+    class FE frontend
+    class API,WORKER backend
+    class DB,MQ data
+    class DOCKER infra
 ```
 
 ### 📂 Componentes
