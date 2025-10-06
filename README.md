@@ -214,7 +214,7 @@ O sistema possui health checks configurados:
 - ✅ Filtros por período e categoria
 
 ### 📈 Relatórios
-- ✅ Relatórios em PDF com gráficos
+- ✅ Relatórios em PDF
 - ✅ Relatórios em Excel para análise
 - ✅ Processamento assíncrono via RabbitMQ
 - ✅ Histórico de relatórios gerados
