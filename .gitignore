@@ -1,0 +1,24 @@
+# Environment files
+.env
+
+# Backup directories (not needed in main repo)
+*-backup/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker
+.docker/
+
+# Temporary files
+*.tmp
+*.temp

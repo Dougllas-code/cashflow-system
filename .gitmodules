@@ -1,0 +1,9 @@
+[submodule "cashflow-front"]
+	path = cashflow-front
+	url = https://github.com/Dougllas-code/cashflow-front.git
+[submodule "cashflow-back"]
+	path = cashflow-back
+	url = https://github.com/Dougllas-code/cashflow-back.git
+[submodule "cashflow-reports"]
+	path = cashflow-reports
+	url = https://github.com/Dougllas-code/cashflow-reports.git
