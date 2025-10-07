@@ -46,10 +46,10 @@ graph TB
     MQ -.->|Containerized| DOCKER
     
     %% Styling
-    classDef frontend fill:#e1f5fe
-    classDef backend fill:#f3e5f5
-    classDef data fill:#e8f5e8
-    classDef infra fill:#fff3e0
+    classDef frontend fill:#e1f5fe,color:#000000
+    classDef backend fill:#f3e5f5, color:#000000
+    classDef data fill:#e8f5e8, color:#000000
+    classDef infra fill:#fff3e0, color:#000000
     
     class FE frontend
     class API,WORKER backend
