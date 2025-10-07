@@ -239,9 +239,9 @@ O sistema possui health checks configurados:
 
 ### 💰 Gestão Financeira
 - ✅ Cadastro de receitas e despesas
-- ✅ Categorização de transações
-- ✅ Dashboard com visão geral
-- ✅ Filtros por período e categoria
+- ✅ Feature: Categorização de transações
+- ✅ Feature: Dashboard com visão geral
+- ✅ Feature: Filtros por período e categoria
 
 ### 📈 Relatórios
 - ✅ Relatórios em PDF
@@ -289,9 +289,9 @@ Quando o backend estiver rodando, acesse:
 - [ ] Implementar notificações em tempo real
 - [ ] Dashboard avançado com métricas
 - [ ] API para integração com bancos
-- [ ] App mobile React Native
 - [ ] Análise de dados com IA
-
+- [ ] Relatórios com gráficos 
+ 
 ## 👨‍💻 Autor
 
 **Dougllas Souza** - [@Dougllas-code](https://github.com/Dougllas-code)
